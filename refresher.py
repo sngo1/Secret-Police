@@ -15,7 +15,7 @@ CLASSES = {
 
 }
 
-num_students_pd4 = len(CLASSES[7]);
+num_students_pd7 = len(CLASSES[7]);
 num_students_pd8 = len(CLASSES[8]);
 num_students_pd9 = len(CLASSES[9]);
 
@@ -23,6 +23,7 @@ num_students_pd9 = len(CLASSES[9]);
 
 # WITHOUT having to provide the dictionary:
 def get_rand_student(period):
+    """
 	if period == 7:
 		student_number = random.randint(0,num_students_pd7 - 1);
 	elif period == 8:
@@ -32,6 +33,12 @@ def get_rand_student(period):
 	else:
 		return "Period does not exist.";
 	return CLASSES[period][student_number];
+        """
+    try:
+        return CLASSES[period][random.randint(0, len(CLASSES[period]) - 1)]
+    except:
+        return "Period does not exist."
+    
 
 # Test Code
 print(get_rand_student(7));
@@ -40,3 +47,4 @@ print(get_rand_student(8));
 print(get_rand_student(8));
 print(get_rand_student(9));
 print(get_rand_student(9));
+print(get_rand_student(10));
